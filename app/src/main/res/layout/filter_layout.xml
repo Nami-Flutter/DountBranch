@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_stroke_color4"
+
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RadioButton
+                android:id="@+id/rbWeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/last_week"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:buttonTint="@color/color4" />
+
+            <RadioButton
+                android:id="@+id/rbMonth"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/last_month"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:buttonTint="@color/color4" />
+
+            <RadioButton
+                android:id="@+id/rbYear"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/last_year"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:buttonTint="@color/color4" />
+
+            <RadioButton
+                android:id="@+id/rbAll"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/all"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:buttonTint="@color/color4"
+                android:checked="true"
+                />
+
+        </RadioGroup>
+    </FrameLayout>
+</layout>

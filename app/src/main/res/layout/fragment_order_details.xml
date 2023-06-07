@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="step"
+            type="String" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color1"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/llData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color1"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="36dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageStep1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_stroke_color4"
+                        android:padding="16dp"
+                        android:src="@drawable/ic_step1" />
+
+                    <View
+                        android:id="@+id/viewStep1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/color4"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageStep2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_gray3"
+                        android:padding="16dp"
+                        android:src="@drawable/ic_step2" />
+
+                    <View
+                        android:id="@+id/viewStep2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/gray3"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageStep3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_gray3"
+                        android:padding="16dp"
+                        android:src="@drawable/ic_step3" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <include
+                        android:id="@+id/step1"
+                        layout="@layout/step1_layout"
+                        android:visibility='@{step.equals("1")?View.VISIBLE:View.GONE,default=gone}'
+
+                        />
+
+                    <include
+                        android:id="@+id/step2"
+                        layout="@layout/step2_layout"
+                        android:visibility='@{step.equals("2")?View.VISIBLE:View.GONE,default=gone}'
+
+                        />
+
+                    <include
+                        android:id="@+id/step3"
+                        layout="@layout/step3_layout"
+                        android:visibility='@{step.equals("3")?View.VISIBLE:View.GONE,default=gone}'
+
+
+                        />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility='@{step.equals("1")?View.VISIBLE:View.GONE,default=gone}'>
+
+                        <Button
+                            android:id="@+id/btnAccept"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_top_green"
+                            android:text="@string/accept"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/btnRefuse"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_top_color22"
+                            android:text="@string/refused"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+
+                            />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_top_color4"
+                        android:text="@string/on_way"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:visibility='@{step.equals("2")?View.VISIBLE:View.GONE,default=gone}' />
+
+                    <Button
+                        android:id="@+id/btnEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_top_color4"
+                        android:text="@string/end_order"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:visibility='@{step.equals("3")?View.VISIBLE:View.GONE,default=gone}' />
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+</layout>
